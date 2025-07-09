@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleChalk Browser Test</title>
+</head>
+<body>
+    <h1>SimpleChalk Browser Test</h1>
+    <p>Open the browser developer console (F12) to see the colored output!</p>
+    
+    <script type="module">
+        // Import all versions
+        import chalk from './dist/esm/index.js';
+        import chalkFast from './dist/esm/SimpleChalkFast.js';
+        import chalkBrowser from './dist/esm/SimpleChalkBrowser.js';
+
+        console.log('=== SimpleChalk Browser Test ===');
+        console.log('');
+
+        console.log('1. ANSI Version (may show raw codes):');
+        console.log(chalk.red('Red text from ANSI version'));
+        console.log(chalk.green('Green text from ANSI version'));
+
+        console.log('');
+        console.log('2. Browser-Optimized Version (should show colors):');
+        console.log(...chalkBrowser.red('Red text from browser version'));
+        console.log(...chalkBrowser.green('Green text from browser version'));
+        console.log(...chalkBrowser.blue('Blue text from browser version'));
+        console.log(...chalkBrowser.bold('Bold text from browser version'));
+        console.log(...chalkBrowser.redBold('Red and bold from browser version'));
+
+        console.log('');
+        console.log('3. Environment detection:');
+        console.log('typeof window:', typeof window);
+        console.log('typeof document:', typeof document);
+        console.log('typeof process:', typeof process);
+
+        console.log('');
+        console.log('4. Usage instructions:');
+        console.log('For browsers, use the browser-optimized version with spread operator:');
+        console.log('console.log(...chalk.red("text")) instead of console.log(chalk.red("text"))');
+
+        console.log('');
+        console.log('If you see actual colors above (not codes), the browser version works! 🎉');
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+{
+  "name": "@alcyone-labs/simple-chalk",
+  "version": "1.0.0",
+  "description": "A bundling-friendly, drop-in replacement for Chalk with basic terminal coloring features",
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "maintainers": [
+    "Nicolas Embleton <nicolas.embleton@gmail.com>"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./fast": {
+      "types": "./dist/types/SimpleChalkFast.d.ts",
+      "import": "./dist/esm/SimpleChalkFast.js",
+      "require": "./dist/cjs/SimpleChalkFast.js"
+    },
+    "./browser": {
+      "types": "./dist/types/SimpleChalkBrowser.d.ts",
+      "import": "./dist/esm/SimpleChalkBrowser.js",
+      "require": "./dist/cjs/SimpleChalkBrowser.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run build:clean && npm run build:types && npm run build:cjs && npm run build:esm",
+    "build:clean": "rm -rf dist",
+    "build:types": "tsc --project tsconfig.types.json",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "tsc --noEmit",
+    "validate": "npm run lint && npm run test:run",
+    "benchmark": "npm run build && node benchmark.js",
+    "test:browser": "npm run build && echo 'Open browser-test.html in your browser to test browser compatibility'",
+    "prepublishOnly": "npm run validate && npm run build",
+    "publish:npm": "npm publish",
+    "publish:dry-run": "npm publish --dry-run"
+  },
+  "keywords": [
+    "chalk",
+    "color",
+    "terminal",
+    "cli",
+    "ansi",
+    "bundling",
+    "drop-in",
+    "replacement",
+    "simple",
+    "lightweight"
+  ],
+  "author": "Alcyone Labs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlcyoneLabs/simple-chalk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlcyoneLabs/simple-chalk/issues"
+  },
+  "homepage": "https://github.com/AlcyoneLabs/simple-chalk#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@10.12.4",
+  "devDependencies": {
+    "@jonahsnider/benchmark": "^5.1.1",
+    "@types/node": "^24.0.12",
+    "@vitest/coverage-v8": "^3.2.4",
+    "ansi-colors": "^4.1.3",
+    "chalk": "^5.4.1",
+    "cli-color": "^2.0.4",
+    "colorette": "^2.0.20",
+    "kleur": "^4.1.5",
+    "nanocolors": "^0.2.13",
+    "picocolors": "^1.1.1",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4",
+    "yoctocolors": "^2.1.1"
+  }
+}
