@@ -1,6 +1,6 @@
 {
   "name": "@alcyone-labs/simple-chalk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A bundling-friendly, drop-in replacement for Chalk with basic terminal coloring features",
   "type": "module",
   "main": "dist/cjs/index.js",
@@ -50,26 +50,23 @@
   },
   "keywords": [
     "chalk",
-    "color",
-    "terminal",
     "cli",
-    "ansi",
-    "bundling",
-    "drop-in",
-    "replacement",
-    "simple",
-    "lightweight"
+    "color",
+    "lightweight",
+    "mcp",
+    "simple-chalk",
+    "terminal"
   ],
   "author": "Alcyone Labs",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlcyoneLabs/simple-chalk.git"
+    "url": "git+https://github.com/Alcyone-Labs/simple-chalk.git"
   },
   "bugs": {
-    "url": "https://github.com/AlcyoneLabs/simple-chalk/issues"
+    "url": "https://github.com/Alcyone-Labs/simple-chalk/issues"
   },
-  "homepage": "https://github.com/AlcyoneLabs/simple-chalk#readme",
+  "homepage": "https://github.com/Alcyone-Labs/simple-chalk#readme",
   "engines": {
     "node": ">=14.0.0"
   },
